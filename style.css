@@ -1,0 +1,226 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: content-box;
+}
+
+body{
+    overflow-x: hidden;
+    background-color: var(--black);
+}
+
+:root{
+    --hot_pink: #FF5F9E;
+    --deep_pink: #E90064;
+    --dark_pink: #B3005E;
+    --darker_deep_pink: #AA0049;
+    --navy_blue: #060047;
+    --darker_navy_blue: #050132;
+    --whitesmoke: #F5F5F5;
+    --black: #151414;
+}
+
+#nav-bar{
+    width: 100vw;
+    height: fit-content;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--navy_blue);
+    border-bottom: rgba(10,0,112, 0.5) 5px solid;
+    z-index: 10;
+}
+
+#nav-bar.sticky{
+    position: fixed;
+}
+
+.nav-logo{
+    display: flex;
+    width: fit-content;
+    height: fit-content;
+    align-items: center;
+    font-family: "Monomaniac One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    gap: 12px;
+    padding-left: 2.4vw;
+}
+
+.nav-logo > img{
+    width: min(48px, 16vw);
+    height: min(48px, auto)
+}
+
+.nav-logo > h4{
+    font-size: clamp(2.5rem, 3vw, 3rem);
+    color: var(--hot_pink);
+}
+
+.nav-buttons{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 2vw;
+    padding-right: 2.4vw;
+}
+
+.nav-buttons > li {
+    list-style: none;
+}
+
+.nav-buttons > li > a{
+    display: block;
+    text-decoration: none;
+    text-align: center;
+    align-items: center;
+    color: var(--whitesmoke);
+    font-size: 1.2rem;
+    font-family: "Nova Square", sans-serif;
+    font-style: normal;
+}
+
+#nav-normal{
+    transition: 0.25s ease-in-out;
+    border-bottom: 2px solid var(--navy_blue);
+}
+
+#nav-login{
+    transition: 0.25s ease-in-out;
+    border: 2px solid var(--deep_pink);
+    border-radius: 4px;
+    padding: 4px 1.5vw;
+}
+
+#nav-reg{
+    transition: 0.25s ease-in-out;
+    border: 2px solid var(--deep_pink);
+    background-color: var(--deep_pink);
+    border-radius: 4px;
+    padding: 4px 1vw;
+}
+
+#burger-menu{
+    display: none;
+    position: absolute;
+    top: 1.2rem;
+    right: 1rem;
+    color: whitesmoke;
+    font-size: 1.2rem;
+}
+
+#nav-reg:hover{
+    background-color: var(--darker_deep_pink);
+}
+
+#nav-login:hover{
+    background-color: var(--darker_deep_pink);
+}
+
+#nav-normal:hover{
+    border-bottom: 2px solid var(--deep_pink);
+}
+
+#home-hero{
+    width: 100%;
+    height: 360px;
+    background-color: var(--navy_blue);
+    display: flex;
+    flex-direction: column;
+    gap: 5vh;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+#home-hero > h1{
+    font-size: clamp(2.6rem, 4vw, 4rem);
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    color:var(--whitesmoke);
+    text-align: center;
+}
+
+#home-hero > button{
+    width: fit-content;
+    height: 8vh;
+    background-color: var(--deep_pink);
+    border: none;
+    border-radius: 18px;
+    padding: 10px 20px;
+    color: whitesmoke;
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: clamp(2rem, 4vw, 2rem);
+}
+
+.wave-spacer{
+    aspect-ratio: 1960/540;
+    width:100%;
+    height:fit-content;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-image: url('assets/wave.svg');
+}
+
+::-webkit-scrollbar{
+    width: 16px;
+    background-color: var(--hot_pink);
+}
+
+@media screen and (max-width: 600px){
+    #burger-menu{
+        display: block;
+    }
+
+    #nav-bar{
+        flex-direction: column;
+        align-items: start;
+    }
+
+    .nav-buttons{
+        width: 100%;
+        flex-direction: column;
+        padding-bottom: 1.5vh;
+        background-color: var(--navy_blue);
+    }
+
+    .nav-buttons{
+        display: none;
+        width: 100%;
+    }
+
+    .nav-buttons > li > a{
+        padding: 1vh 1vw;
+    }
+
+    .nav-buttons.active{
+        display: flex;
+    }
+
+    #nav-login{
+        transition: 0.25s ease-in-out;
+        border: 2px solid var(--navy_blue);
+    }
+
+    #nav-reg{
+        transition: 0.25s ease-in-out;
+        background-color: var(--navy_blue);
+        border: 2px solid var(--navy_blue);
+    }
+
+    #nav-login:hover{
+        background-color: var(--navy_blue);
+        border-bottom: 2px solid var(--deep_pink);
+    }
+
+    #nav-reg:hover{
+        background-color: var(--navy_blue);
+        border-bottom: 2px solid var(--deep_pink);
+    }
+}

@@ -25,10 +25,12 @@ body{
     height: fit-content;
     display: flex;
     flex-direction: row;
+    position: absolute;
+    top: 0;
     align-items: center;
     justify-content: space-between;
     background-color: var(--navy_blue);
-    border-bottom: rgba(10,0,112, 0.5) 5px solid;
+    box-shadow: -1rem 0 3rem #000;
     z-index: 10;
 }
 
@@ -125,12 +127,18 @@ body{
 
 #home-hero{
     width: 100%;
-    height: 360px;
-    background-color: var(--navy_blue);
+    height: 730px;
+    aspect-ratio: 1920/1080;
+    background-image: url(./assets/herobg.png);
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: 55%;
+    background-size: cover;
     display: flex;
     flex-direction: column;
     gap: 5vh;
-    align-items: center;
+    padding-left: 4vw;
+    align-items: start;
     justify-content: center;
     overflow: hidden;
 }
@@ -141,31 +149,173 @@ body{
     font-weight: 500;
     font-style: normal;
     color:var(--whitesmoke);
-    text-align: center;
+    text-align: left;
 }
 
-#home-hero > button{
+#home-hero > a{
     width: fit-content;
-    height: 8vh;
+    height: 6.4vh;
     background-color: var(--deep_pink);
     border: none;
     border-radius: 18px;
-    padding: 10px 20px;
+    padding: 10px 28px;
     color: whitesmoke;
     font-family: "Ubuntu", sans-serif;
     font-weight: 500;
     font-style: normal;
-    font-size: clamp(2rem, 4vw, 2rem);
+    font-size: clamp(1.5rem, 4vw, 2rem);
+    align-items: center;
+    text-decoration: none;
 }
 
 .wave-spacer{
     aspect-ratio: 1960/540;
     width:100%;
-    height:fit-content;
+    height: fit-content;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
     background-image: url('assets/wave.svg');
+}
+
+#recommend-section{
+    width: 100%;
+    height: 680px;
+    background-color: var(--deep_pink);
+}
+
+.recommend-div{
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    gap: 8vh;
+    background-color: var(--deep_pink);
+    align-items: center;
+}
+
+#recommend-title{
+    width: fit-content;
+    height: 12vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 24px;
+    border: var(--navy_blue) 2px solid;
+    box-shadow: 0.4rem 0.4rem 1px var(--navy_blue);
+}
+
+#recommend-title > h1{
+    font-family: "Alumni Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    color: var(--whitesmoke);
+    font-size: clamp(2.6rem, 4.3vw, 4rem);
+}
+
+#recommend-carousel-wrapper{
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#recommend-carousel-wrapper > input{
+    position: absolute;
+    width: 1px;
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+#recommended-song{
+    display:flex;
+    flex-direction: row;
+    gap: 24px;
+}
+
+.recommended-song-card{
+    background-color: var(--navy_blue);
+    width: 310px;
+    height: 440px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.recommended-song-card > img{
+    width: 265px;
+    height: 300px;
+    padding-bottom: 16px;
+    aspect-ratio: 265/300;
+}
+
+.recommended-song-card > div{
+    color:white;
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    display: flex;
+    flex-direction: column;
+    flex-flow: column wrap;
+    width: inherit;
+    padding-left: 50px;
+    gap: 5px;
+}
+
+.recommended-song-card:hover{
+    scale: 105%;
+    box-shadow: 0.2rem 0.2rem 1rem #060043;
+}
+
+.recommended-song-card:nth-child(1){
+    transition-property: transform;
+}
+
+.recommended-song-card:nth-child(2){
+    transition-delay: 300ms;
+    transition-property: opacity, transform;
+}
+
+.recommended-song-card:nth-child(3){
+    transition-delay: 500ms;
+    transition-property: opacity, transform;
+}
+
+.recommended-song-card:nth-child(4){
+    transition-delay: 700ms;
+    transition-property: opacity, transform;
+}
+
+.card-hidden{
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateX(-100%);
+    transition: all 1s;
+}
+
+.card-show{
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0);
+}
+
+.hidden{
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateY(25%);
+    transition: all 1.4s;
+}
+
+.show{
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0);
 }
 
 ::-webkit-scrollbar{
@@ -173,7 +323,21 @@ body{
     background-color: var(--hot_pink);
 }
 
-@media screen and (max-width: 600px){
+@media(prefered-reduced-motion){
+    .hidden{
+        transition: none;
+    }
+}
+
+@media screen and (max-width: 1080px){
+    #recommended-song{
+        flex-wrap: wrap;
+        flex-flow: column wrap;
+        align-items: center;
+    }
+}
+
+@media screen and (max-width: 768px){
     #burger-menu{
         display: block;
     }
@@ -222,5 +386,24 @@ body{
     #nav-reg:hover{
         background-color: var(--navy_blue);
         border-bottom: 2px solid var(--deep_pink);
+    }
+    
+    #home-hero{
+        background-image: none;
+        background-color: var(--navy_blue);
+        align-items: center;
+        justify-content: center;
+    }
+
+    #home-hero > h1{
+        text-align: center;
+    }
+
+    .recommend-div{
+        height: fit-content;
+    }
+    
+    .recommended-song-card{
+        transition-delay: 100ms;
     }
 }

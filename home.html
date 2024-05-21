@@ -12,6 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Monomaniac+One&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Nova+Square&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Alumni+Sans:ital,wght@0,100..900;1,100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
@@ -38,12 +39,52 @@
             </li>
         </ul>
     </nav>
-    <section>
-            <div id="home-hero">
-                 <h1>The music you love, <br> all in one place</h1>
-                 <button>STREAM NOW</button>
-            </div>
+    <section class="hidden">
+        <div id="home-hero">
+            <h1>The music you love, <br> all in one place</h1>
+            <a href="">STREAM NOW</a>
+        </div>
+        <div class="wave-spacer"></div>
     </section>
-    <div class="wave-spacer"></div>
+    <section id="recommend-section">
+        <div class="recommend-div hidden">
+            <div id="recommend-title">
+               <h1>Today's Recommendation</h1>
+            </div>
+            <div id="recommended-song">
+                <div class="recommended-song-card card-hidden">
+                    <img src="assets/songCover/meteor.jpg" alt="song cover">
+                    <div>
+                        <h1>Meteor</h1>
+                        <p>DIVELA</p>
+                    </div>
+                </div>
+                <div class="recommended-song-card card-hidden">
+                    <img src="assets/songCover/nuts.jpg" alt="song cover">
+                    <div>
+                        <h1>Mixed Nuts</h1>
+                        <p>Official Hige Dandism</p>
+                    </div>
+                </div>
+                <div class="recommended-song-card card-hidden">
+                    <img src="assets/songCover/teo.jpg" alt="song cover">
+                    <div>
+                        <h1>テオ</h1>
+                        <p>Omoi</p>
+                    </div>
+                </div>
+                <div class="recommended-song-card card-hidden">
+                    <img src="assets/songCover/ibegyou.webp" alt="song cover">
+                    <div>
+                        <h1>I beg you</h1>
+                        <p>Aimer</p>
+                    </div>
+                </div>
+            </div>  
+        </div>
+    </section>
+    <section id="album-section">
+        
+    </section>
 </body>
 </html>

@@ -292,6 +292,197 @@ body{
     transition-property: opacity, transform;
 }
 
+#album-section{
+    width: 100%;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    background-color: var(--black);
+}
+
+#album-section > input{
+    position: absolute;
+    width: 1px;
+    clip: rect(0,0,0,0);
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+#album-showcase{
+    display: grid;
+    grid-template-areas: 
+    "first second";
+}
+
+#album-showcase > label{
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    gap: 28px;
+    padding: 20px 0px 20px 30px;
+    cursor: pointer;
+}
+
+#album-showcase > label > h1{
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 800;
+    font-style: normal;
+    color: var(--whitesmoke);
+}
+
+#album-header{
+    color: white;
+    align-self: flex-start;
+    height: 80px;
+    width: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 60px;
+    background-color: var(--deep_pink);
+    transform: translateX(5.9vw);
+}
+
+#album-header > h1{
+    font-family: "Alumni Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    font-size: clamp();
+    color: var(--whitesmoke);
+    font-size: clamp(2.6rem, 4vw, 4rem);
+    text-align: center;
+}
+
+.album-cover{
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    height: fit-content;
+    background-color: var(--whitesmoke);
+    padding: 10px;
+    border-radius: 10px;
+}
+
+
+.album-cover > div{
+    width: 280px;
+    height: 280px;
+    border-radius: 8px;
+    object-fit: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.album-cover > div > img{
+    width: 275px;
+    height: 275px;
+    transition: all .5s ease-in-out;
+}
+
+.first-album-card, .second-album-card{
+    position: relative;
+    width: 620px;
+    height: 300px;
+    background-color: var(--deep_pink);
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+.first-album-card{
+    grid-area: first;
+    margin-right: 20px;
+    --swing: -25px;
+    --overlap: 25px
+   
+}
+
+.second-album-card{
+    grid-area: second;
+    margin-left: 20px;
+    --swing: 25px;
+    --overlap: -25px
+}
+
+.album-detail{
+    width: fit-content;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    padding-bottom: 12px;
+}
+
+.album-detail > ol{
+    display: flex;
+    flex-direction: column;
+    padding-left: 18px;
+    gap: 4px;
+}
+
+.album-detail > ol > li{
+    color: var(--whitesmoke);
+    font-family: "Kreon", serif;
+    font-optical-sizing: auto;
+    font-size: 1.1rem;
+    font-weight: 600;
+    font-style: normal;
+}
+
+.detail-text{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 74px;
+}
+
+.detail-text > h1{
+    color: var(--whitesmoke);
+    font-size: 2.8rem;
+    height:fit-content;
+    font-family: "Freeman", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.detail-text > h2{
+    color: var(--whitesmoke);
+    font-size: 1.8rem;
+    font-family: "Freeman", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    transform: translateY(-10px);
+}
+
+.detail-separator{
+    border: var(--navy_blue) 1px solid;
+    width: 240px;
+}
+
+.first-album-card:hover, .second-album-card:hover{
+    .album-cover > div > img{
+        transform: scale(1.2);
+    }
+}
+
+#first-album:checked ~ #album-showcase .first-album-card,
+#second-album:checked ~ #album-showcase .second-album-card{
+    animation-name: swing-forward;
+} 
+
+#first-album:checked ~ #album-showcase .second-album-card,
+#second-album:checked ~ #album-showcase .first-album-card{
+    animation-name: swing-backward;
+} 
+
 .card-hidden{
     opacity: 0;
     filter: blur(5px);
@@ -329,7 +520,45 @@ body{
     }
 }
 
+@keyframes swing-forward{
+    0%{
+        z-index: 1;
+        transform: scale(0.9);
+    }
+    50%{
+        transform: translateX(var(--swing));
+    }
+    100%{
+        z-index: 2;
+        transform: translateX(var(--overlap)) scale(1.1);
+    }
+}
+
+@keyframes swing-backward{
+    0%{
+        z-index: 2;
+        transform: translateX(var(--overlap)) scale(1.1);
+    }
+    50%{
+        transform: translateX(var(--swing));
+    }
+    100%{
+        z-index: 1;
+        transform: scale(0.9);
+    }
+}
+
+
 @media screen and (max-width: 1080px){
+    #recommend-section{
+        height: fit-content;
+        padding-bottom: 48px;
+    }
+
+    .recommend-div{
+        height: fit-content;
+    }
+
     #recommended-song{
         flex-wrap: wrap;
         flex-flow: column wrap;
@@ -399,10 +628,6 @@ body{
         text-align: center;
     }
 
-    .recommend-div{
-        height: fit-content;
-    }
-    
     .recommended-song-card{
         transition-delay: 100ms;
     }

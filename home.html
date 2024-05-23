@@ -12,7 +12,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Monomaniac+One&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Nova+Square&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Freeman&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Alumni+Sans:ital,wght@0,100..900;1,100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kreon:wght@300..700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
@@ -44,8 +46,8 @@
             <h1>The music you love, <br> all in one place</h1>
             <a href="">STREAM NOW</a>
         </div>
-        <div class="wave-spacer"></div>
     </section>
+    <div class="wave-spacer"></div>
     <section id="recommend-section">
         <div class="recommend-div hidden">
             <div id="recommend-title">
@@ -83,8 +85,61 @@
             </div>  
         </div>
     </section>
-    <section id="album-section">
-        
+    <section id="album-section" class="hidden">
+        <input type="radio" name="album" id="first-album">
+        <input type="radio" name="album" id="second-album">
+        <div id="album-header">
+            <h1>Best Selling Album</h1>
+        </div>
+        <div id="album-showcase">
+            <label for="first-album" class="first-album-card">
+                <div class="album-cover">
+                    <div>
+                        <img src="assets/songCover/suisei.jfif" alt="e">
+                    </div>
+                </div>
+                <div class="album-detail">
+                    <div class="detail-text">
+                        <h1>SPECTER</h1>
+                        <h2>Hoshimachi Suisei</h2>
+                    </div>
+                    <div class="detail-separator"></div>
+                    <ol>
+                        <li>灼熱にて純情(wii-wii-woo)</li>
+                        <li>TEMPLATE</li>
+                        <li>みちづれ</li>
+                        <li>褪せたハナミドリ</li>
+                        <li>TRUE GIRL SHOW</li>
+                        <li>...</li>
+                    </ol>
+                    <div class="detail-separator"></div>
+                </div>
+            </label>
+            <label for="second-album" class="second-album-card">
+                <div class="album-cover">
+                    <div>
+                        <img src="assets/songCover/zodiacalbum.jpg" alt="e">
+                    </div>
+                </div>
+                <div class="album-detail">
+                    <div class="detail-text">
+                        <h1>ZODIAC</h1>
+                        <h2>Hakos Baelz</h2>
+                    </div>
+                    <div class="detail-separator"></div>
+                    <ol>
+                        <li>RxRxR</li>
+                        <li>La Roja</li>
+                        <li>The Fight Song</li>
+                        <li>HIDE & SEEK</li>
+                        <li>GEKIRIN</li>
+                        <li>818</li>
+                        <li>...</li>
+                    </ol>
+                    <div class="detail-separator"></div>
+                </div>
+            </label>
+        </div>
     </section>
 </body>
 </html>

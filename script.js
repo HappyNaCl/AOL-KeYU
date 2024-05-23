@@ -44,4 +44,4 @@ const hiddenElements = document.getElementsByClassName('hidden')
 Array.from(hiddenElements).forEach((el) => observer.observe(el))
 
 const cards = document.getElementsByClassName('card-hidden')
-Array.from(cards).forEach((el) => observer.observe(el))
+Array.from(cards).forEach((el) => cardObserver.observe(el))

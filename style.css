@@ -18,6 +18,8 @@ body{
     --darker_navy_blue: #050132;
     --whitesmoke: #F5F5F5;
     --black: #151414;
+    --obsidian: #020403;
+    --cloud: #C5C6D0;
 }
 
 #nav-bar{
@@ -483,6 +485,88 @@ body{
     animation-name: swing-backward;
 } 
 
+#footer{
+    width: 100%;
+    height: 400px;
+    background-color: var(--obsidian);
+}
+
+.footer-container{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    height: inherit;
+    gap: 10vw;
+    padding: 0px 10vw;
+}
+
+.footer-list{
+    display: flex;
+    flex-direction: column;
+    width: 260px;
+    gap: 20px;
+}
+
+.footer-list > h1{
+    color: var(--whitesmoke);
+    font-family: "Open Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+    font-size: clamp(1.5rem, 2.2vw, 1.6rem);
+}
+
+.footer-list > ol {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    list-style: none;
+    font-size: 1.6rem;
+}
+
+.footer-list > ol > li > a{
+    color: var(--cloud);
+    font-family: "Open Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: clamp(1.2rem, 2vw, 1.5rem);;
+    text-decoration: none;
+    transition: 0.16s ease-in-out;
+}
+
+.footer-list > ol > li > a:hover{
+    color: var(--whitesmoke);
+}
+
+.footer-img{
+    position: relative;
+    display: block;
+    margin-left: 20px;
+}
+
+.footer-img > img{
+    position: absolute;
+    width: 160px;
+    height: 160px;
+}
+
+.footer-img > #image-1{
+    transform: scale(160%) translateY(-40%);
+    z-index: 8;
+}
+
+.footer-img > #image-2{
+    transform: scale(120%) translateY(-20%) translateX(-50%);
+    z-index: 10;
+}
+
+.footer-img > #image-3{
+    transform: scale(120%) translateY(-20%) translateX(50%);
+    z-index: 10;
+}
+
 .card-hidden{
     opacity: 0;
     filter: blur(5px);
@@ -631,4 +715,46 @@ body{
     .recommended-song-card{
         transition-delay: 100ms;
     }
+
+
+    #album-section{
+        height: 1000px;
+    }
+
+    #album-header{
+        align-self: center;
+        transform: translate(0);
+    }
+
+    #album-showcase{
+        grid-template-areas: 
+        "first"
+        "second";
+        grid-template-columns: auto;
+        grid-row-gap: 1cm;
+        place-items: center;
+    }
+
+    .first-album-card,.second-album-card{
+        margin: 0;
+    }
+
+    #footer{
+        height: 700px;
+    }
+
+    .footer-list{
+        flex-grow: 1;
+    }
+
+    .footer-list > ol {
+        gap: 16px;
+    }
+
+    .footer-img > img{
+        position: absolute;
+        width: 80px;
+        height: 80px;
+    }
+
 }

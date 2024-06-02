@@ -6,11 +6,87 @@
     <title>KEYU Music | Login</title>
     <script defer src="./script.js"></script>
     <link rel="stylesheet" href="./style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Monomaniac+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-    <div>
+    <section>
+        <div id="container">
+            <div class="flip-card" id="flipper">
+                <div class="front">
+                    <div id="div-form">
+                        <div class="logo">
+                            <img src="../assets/logo1.png" alt="">
+                            <h4>Music</h4>
+                        </div>
+                        <h1>Login</h1>
+                        <form action="">
+                            <div class="form-box">
+                                <input type="text" id="login-username" placeholder="Username">
+                            </div>
+                            <div class="form-box">
+                                <input type="password" id="login-password" placeholder="Password">
+                                <label class="password-label" for="password-toggle"><i class="fa fa-eye" style="color:white"></i></label>
+                                <input type="checkbox" id="password-toggle">
+                                <span></span>
+                            </div>
+                            <div class="remember-me-div">
+                                <input type="checkbox" id="remember-me">
+                                <label class="remember-me-label" for="remember-me">Remember Me</label>
+                                <span></span>
+                            </div>
+                            <button class="form-button">Sign in</button>
+                        </form>
+                        <div class="login-extra">
+                            <div class="google-login">
+                                <img src="../assets/logos/google.png"></img>
+                                <p>Sign in with Google</p>
+                            </div>
+                            <p>Don't have an acoount? <a id="login-button">Register here!</a></p>
+                        </div>
+                    </div>
+                </div>
 
-
-    </div>
+                <div class="back">
+                    <div id="div-form">
+                        <div class="logo">
+                            <img src="../assets/logo1.png" alt="">
+                            <h4>Music</h4>
+                        </div>
+                        <h1>Register</h1>
+                        <form action="">
+                            <div class="form-box">
+                                <input type="text" id="register-username" placeholder="Username">
+                            </div>
+                            <div class="form-box">
+                                <input type="text" id="register-email" placeholder="Email">
+                            </div>
+                            <div class="form-box">
+                                <input type="password" id="register-password" placeholder="Password">
+                                <label class="password-label" for="password-toggle"><i class="fa fa-eye" style="color:white"></i></label>
+                                <input type="checkbox" id="password-toggle">
+                                <span></span>
+                            </div>
+                            <div class="form-box">
+                                <input type="password" id="register-con-password" placeholder="Confirm Password">
+                                <label class="password-label" for="con-password-toggle"><i class="fa fa-eye" style="color:white"></i></label>
+                                <input type="checkbox" id="con-password-toggle">
+                                <span></span>
+                            </div>
+                            <br>
+                            <button class="form-button">Register</button>
+                        </form>
+                        <div class="login-extra">
+                            <p>Already have an acoount? <a id="register-button">Login here!</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 </body>
 </html>

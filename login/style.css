@@ -68,7 +68,7 @@ input:focus{
 
 .flip-card{
     width: 500px;
-    height: fit-content;
+    height: 650px;
     position: relative;
     transition: 0.6s;
 	transform-style: preserve-3d;
@@ -76,7 +76,7 @@ input:focus{
 
 .front, .back{
     position: absolute;
-    top: -40vh;
+    top: -4.2vh;
     backface-visibility: hidden;
 }
 
@@ -119,6 +119,17 @@ input:focus{
     font-style: normal;
 }
 
+#div-form > form > h3{
+    color: whitesmoke;
+    font-size: 1.1rem;
+    font-family: "DM Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    align-self: flex-start;
+    padding: 0px 1vw;
+}
+
 #div-form > form{
     height: fit-content;
     display: flex;
@@ -126,6 +137,12 @@ input:focus{
     align-items: center;
     gap: 24px;
     padding-top: 4vh;
+}
+
+.form-field{
+    display: flex;
+    flex-direction: column;
+    width: inherit;
 }
 
 .form-box{
@@ -165,6 +182,15 @@ input:focus{
     font-style: normal;
     font-size: 1.6em;
 }
+
+#l-password-toggle{
+    display: hidden;
+    width: 1px;
+    clip: rect(0,0,0,0);
+    overflow: hidden;
+    white-space: nowrap;
+}
+
 
 #password-toggle{
     display: hidden;
@@ -225,6 +251,60 @@ input:focus{
 
 #remember-me:checked::before {
     transform: scale(1);
+}
+
+.birthday-box{
+    width: 25vw;
+    display: grid;
+    column-gap: 10px;
+    grid-template-columns: minmax(auto, 27.5%) minmax(auto, 40%) minmax(auto, 27.5%);
+    
+}
+
+.birthday-box > input{
+    background-color: var(--navy_blue);
+    color: white;
+    border: none;
+    border-bottom: var(--whitesmoke) solid 1px;
+    font-family: "DM Sans", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1rem;
+}
+
+.birthday-box > input::placeholder{
+    color: whitesmoke;
+    padding: 0.5vh 0.5vw;
+}   
+
+.error{
+    border-bottom: red solid 1px;
+}
+
+.error-text{
+    color: red;
+    font-size: 1rem;
+    text-wrap: nowrap;
+}
+
+#month-select{
+    background-color: var(--navy_blue);
+    color: var(--whitesmoke);
+    border: none;
+    border-bottom: var(--whitesmoke) solid 1px;
+    font-family: "DM Sans", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1rem;
+}
+
+#month-select:invalid{
+    color: grey
+}
+
+#month-select:focus{
+    border: none;
+    border-bottom: var(--whitesmoke) solid 1px;
 }
 
 .login-extra{

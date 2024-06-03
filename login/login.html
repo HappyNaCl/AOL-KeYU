@@ -24,15 +24,16 @@
                             <h4>Music</h4>
                         </div>
                         <h1>Login</h1>
-                        <form action="">
+                        <form action="" name="loginForm">
                             <div class="form-box">
-                                <input type="text" id="login-username" placeholder="Username">
+                                <input type="text" name="login-username" id="login-username" placeholder="Username">
+                                <span id="l-username-err"></span>
                             </div>
                             <div class="form-box">
-                                <input type="password" id="login-password" placeholder="Password">
-                                <label class="password-label" for="password-toggle"><i class="fa fa-eye" style="color:white"></i></label>
-                                <input type="checkbox" id="password-toggle">
-                                <span></span>
+                                <input type="password" name="login-password" id="login-password" placeholder="Password">
+                                <label class="password-label" for="l-password-toggle"><i class="fa fa-eye" id="eye-logo" style="color:white"></i></label>
+                                <input type="checkbox" id="l-password-toggle" onclick="showLoginPassword()">
+                                <span id="l-password-err"></span>
                             </div>
                             <div class="remember-me-div">
                                 <input type="checkbox" id="remember-me">
@@ -41,6 +42,7 @@
                             </div>
                             <button class="form-button">Sign in</button>
                         </form>
+                        <br><br><br><br><br>
                         <div class="login-extra">
                             <div class="google-login">
                                 <img src="../assets/logos/google.png"></img>
@@ -58,27 +60,50 @@
                             <h4>Music</h4>
                         </div>
                         <h1>Register</h1>
-                        <form action="">
+                        <form action="" name="registerForm" onsubmit="validateRegister()">
+                                <div class="form-box">
+                                    <input type="text" name="reg-username" id="register-username" placeholder="Username">
+                                </div>
                             <div class="form-box">
-                                <input type="text" id="register-username" placeholder="Username">
+                                <input type="text" name="reg-email" id="register-email" placeholder="Email">
+                                <span id="r-email-err" class="error-text"></span>  
                             </div>
                             <div class="form-box">
-                                <input type="text" id="register-email" placeholder="Email">
+                                <input type="password" name="reg-password" id="register-password" placeholder="Password">
+                                <label class="password-label" for="password-toggle"><i class="fa fa-eye" id="r-eye-logo" style="color:white"></i></label>
+                                <input type="checkbox" id="password-toggle" onclick="showRegisterPassword()">
+                                <span id="r-password-err" class="error-text"></span>
                             </div>
                             <div class="form-box">
-                                <input type="password" id="register-password" placeholder="Password">
-                                <label class="password-label" for="password-toggle"><i class="fa fa-eye" style="color:white"></i></label>
-                                <input type="checkbox" id="password-toggle">
-                                <span></span>
+                                <input type="password" name="reg-con-password" id="register-con-password" placeholder="Confirm Password">
+                                <label class="password-label" for="con-password-toggle"><i class="fa fa-eye" id="rc-eye-logo" style="color:white"></i></label>
+                                <input type="checkbox" id="con-password-toggle" onclick="showConRegisterPassword()">
+                                <span id="r-con-password-err" class="error-text"></span>
                             </div>
-                            <div class="form-box">
-                                <input type="password" id="register-con-password" placeholder="Confirm Password">
-                                <label class="password-label" for="con-password-toggle"><i class="fa fa-eye" style="color:white"></i></label>
-                                <input type="checkbox" id="con-password-toggle">
-                                <span></span>
+                            <h3>Birthdate</h3>
+                            <div class="form-box" style="border: none;">
+                                <div class="birthday-box">
+                                    <input type="text" name="bday-date" id="bday-date" placeholder="dd">
+                                    <select name="bday-month" id="month-select">
+                                        <option value="none" disabled selected hidden>Month</option>
+                                        <option value="jan">January</option>
+                                        <option value="feb">February</option>
+                                        <option value="mar">March</option>
+                                        <option value="apr">April</option>
+                                        <option value="may">May</option>
+                                        <option value="jun">June</option>
+                                        <option value="jul">July</option>
+                                        <option value="aug">August</option>
+                                        <option value="sep">September</option>
+                                        <option value="oct">October</option>
+                                        <option value="nov">November</option>
+                                        <option value="dec">December</option>
+                                    </select>
+                                    <input type="text" name="bday-year" id="bday-year" placeholder="yyyy">
+                                </div>
+                            <span id="r-birthday-err"></span>    
                             </div>
-                            <br>
-                            <button class="form-button">Register</button>
+                            <button type="submit" class="form-button">Register</button>
                         </form>
                         <div class="login-extra">
                             <p>Already have an acoount? <a id="register-button">Login here!</a></p>

@@ -27,22 +27,23 @@
                         <form action="" name="loginForm">
                             <div class="form-box">
                                 <input type="text" name="login-username" id="login-username" placeholder="Username">
-                                <span id="l-username-err"></span>
                             </div>
+                            <span class="err-message" id="l-username-err"></span>
                             <div class="form-box">
                                 <input type="password" name="login-password" id="login-password" placeholder="Password">
                                 <label class="password-label" for="l-password-toggle"><i class="fa fa-eye" id="eye-logo" style="color:white"></i></label>
                                 <input type="checkbox" id="l-password-toggle" onclick="showLoginPassword()">
-                                <span id="l-password-err"></span>
                             </div>
+                            <span class="err-message" id="l-password-err"></span>
                             <div class="remember-me-div">
                                 <input type="checkbox" id="remember-me">
                                 <label class="remember-me-label" for="remember-me">Remember Me</label>
                                 <span></span>
                             </div>
+                            <br><br>
                             <button class="form-button">Sign in</button>
                         </form>
-                        <br><br><br><br><br>
+                        <br><br><br><br>
                         <div class="login-extra">
                             <div class="google-login">
                                 <img src="../assets/logos/google.png"></img>
@@ -61,25 +62,26 @@
                         </div>
                         <h1>Register</h1>
                         <form action="" name="registerForm" onsubmit="validateRegister()">
-                                <div class="form-box">
-                                    <input type="text" name="reg-username" id="register-username" placeholder="Username">
-                                </div>
+                            <div class="form-box">
+                                <input type="text" name="reg-username" id="register-username" placeholder="Username">
+                            </div>
+                            <span class="err-message" id="r-username-err"></span>
                             <div class="form-box">
                                 <input type="text" name="reg-email" id="register-email" placeholder="Email">
-                                <span id="r-email-err" class="error-text"></span>  
                             </div>
+                            <span class="err-message" id="r-email-err" class="error-text"></span>  
                             <div class="form-box">
                                 <input type="password" name="reg-password" id="register-password" placeholder="Password">
                                 <label class="password-label" for="password-toggle"><i class="fa fa-eye" id="r-eye-logo" style="color:white"></i></label>
                                 <input type="checkbox" id="password-toggle" onclick="showRegisterPassword()">
-                                <span id="r-password-err" class="error-text"></span>
                             </div>
+                            <span class="err-message" id="r-password-err" class="error-text"></span>
                             <div class="form-box">
                                 <input type="password" name="reg-con-password" id="register-con-password" placeholder="Confirm Password">
                                 <label class="password-label" for="con-password-toggle"><i class="fa fa-eye" id="rc-eye-logo" style="color:white"></i></label>
                                 <input type="checkbox" id="con-password-toggle" onclick="showConRegisterPassword()">
-                                <span id="r-con-password-err" class="error-text"></span>
                             </div>
+                            <span class="err-message" id="r-con-password-err" class="error-text"></span>
                             <h3>Birthdate</h3>
                             <div class="form-box" style="border: none;">
                                 <div class="birthday-box">
@@ -100,9 +102,10 @@
                                         <option value="dec">December</option>
                                     </select>
                                     <input type="text" name="bday-year" id="bday-year" placeholder="yyyy">
-                                </div>
-                            <span id="r-birthday-err"></span>    
+                                </div>   
                             </div>
+                            <span class="err-message" id="r-birthday-err"></span> 
+                            <br>
                             <button type="submit" class="form-button">Register</button>
                         </form>
                         <div class="login-extra">

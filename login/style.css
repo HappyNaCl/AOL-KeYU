@@ -135,7 +135,7 @@ input:focus{
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 24px;
+    gap: 4px;
     padding-top: 4vh;
 }
 
@@ -151,6 +151,7 @@ input:focus{
     flex-direction: row;
     justify-content: start;
     border-bottom: white solid 1px;
+    position: relative;
 }
 
 .form-box > input{
@@ -258,34 +259,36 @@ input:focus{
     display: grid;
     column-gap: 10px;
     grid-template-columns: minmax(auto, 27.5%) minmax(auto, 40%) minmax(auto, 27.5%);
-    
 }
 
 .birthday-box > input{
     background-color: var(--navy_blue);
-    color: white;
+    color: whitesmoke;
     border: none;
     border-bottom: var(--whitesmoke) solid 1px;
     font-family: "DM Sans", sans-serif;
     font-weight: 400;
     font-style: normal;
     font-size: 1rem;
+    padding: 0.5vh 0.5vw;
 }
 
 .birthday-box > input::placeholder{
     color: whitesmoke;
-    padding: 0.5vh 0.5vw;
 }   
+
+.err-message{
+    height: 20px;
+    color: red;
+    font-size: 1rem;
+    align-self: flex-start;
+    padding: 0px 1vw;
+}
 
 .error{
     border-bottom: red solid 1px;
 }
 
-.error-text{
-    color: red;
-    font-size: 1rem;
-    text-wrap: nowrap;
-}
 
 #month-select{
     background-color: var(--navy_blue);
@@ -312,7 +315,7 @@ input:focus{
     display: flex;
     flex-direction: column;
     gap: 24px;
-    padding-top: 8vh;
+    padding-top: 6vh;
 }
 
 .login-extra > p{

@@ -65,6 +65,31 @@ registerForm.addEventListener('submit', (e) => {
 
 let errorMsg = ""
 
+function User(name, email, password, birthday){
+    this.name = name;
+    this.email = email;
+    this.password = password;
+    this.birthday = birthday;
+
+    localStorage.setItem(this.email, JSON.stringify(this));
+}
+
+function isUnique(email){
+    return (localStorage.getItem(email) === null)? true: false;
+}
+
+function getBday(date, month, year){
+    if(typeof(date) !== Number){
+        date = parseInt(date);
+    }
+    if(typeof(year) !== Number){
+        year = parseInt(date);
+    }
+    const months = ['jan', 'feb', 'mar', 'apr', 'may', 'jun', 'jul', 'aug', 'sep', 'oct', 'nov', 'dec'];
+    let monthNum = months.indexOf(month); //Month in js starts at 0(?)
+    return new Date(year, monthNum, date); 
+}
+
 function resetError(){
     errorMsg = ""
 }
@@ -126,6 +151,10 @@ function validateEmail(str){
         errorMsg = "Email must end with \.com"
         return false;
     }
+    if(!isUnique(str)){
+        errorMsg = "Email is taken"
+        return false;
+    }
     let domainName = str.substring(str.indexOf('@') + 1, str.indexOf('.'));
     if(domainName.length < 0){
         errorMsg = "Please use a valid email"
@@ -141,7 +170,6 @@ function validateBday(date, month, year){
     if(typeof(year) !== Number){
         year = parseInt(year);
     }
-    console.log(date, month, year);
     if(month === "none"){
         document.getElementById('month-select').style = "border-bottom: red solid 1px;";
         errorMsg = "Please fill in your birth month";
@@ -230,4 +258,8 @@ function validateRegister(){
         document.getElementById('r-birthday-err').innerText = "";
     }
     resetError();
+
+    if(isValid){
+        new User(usernameVal, emailVal, passwordVal, getBday(bdayDateVal, bdayMonthVal, bdayYearVal))
+    }
 }

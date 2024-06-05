@@ -4,10 +4,12 @@ let registerButton = document.getElementById('register-button');
 
 loginButton.addEventListener('click', () =>{
     document.querySelector('#flipper').classList.toggle("flip")
+    document.title = "KEYU Music | Register"
 })
 
 registerButton.addEventListener('click', () => {
     document.querySelector('#flipper').classList.toggle("flip")
+    document.title = "KEYU Music | Login"
 })
 
 //Password Toggle
@@ -55,6 +57,45 @@ loginForm.addEventListener('submit', (e) => {
     e.preventDefault();
 })
 
+function validateLogin(){
+    const emailVal = loginForm.elements['login-email'].value;
+    const passwordVal = loginForm.elements['login-password'].value;
+
+    if(emailVal.length <= 0){
+        document.getElementById('login-username-err').innerText = "Username must be filled"
+        document.getElementById('login-username').parentElement.classList.add('error')
+        return;
+    }else{
+        document.getElementById('login-username-err').innerText = ""
+        document.getElementById('login-username').parentElement.classList.remove('error')
+    }
+    if(passwordVal.length <= 0){
+        document.getElementById('login-password-err').innerText = "Password must be filled"
+        document.getElementById('login-password').parentElement.classList.add('error')
+        return;
+    }
+    else{
+        document.getElementById('login-password-err').innerText = ""
+        document.getElementById('login-password').parentElement.classList.remove('error')
+    }
+
+    const checkUser = JSON.parse(localStorage.getItem(emailVal));
+    if(checkUser === null){
+        document.getElementById('login-error').innerText = "User not found"
+        return;
+    }else{
+        document.getElementById('login-error').innerText = ""
+    }
+
+    if(emailVal === checkUser["email"] && passwordVal === checkUser["password"]){
+        document.cookie 
+        return;
+    }
+    else {
+        document.getElementById('login-error').innerText = "Invalid password or username"
+        return;
+    }
+}
 
 
 //Register Form Validatrion
@@ -139,7 +180,7 @@ function validatePassword(str){
 }
 
 function validateEmail(str){
-    if(str.length < 0){
+    if(str.length <= 0){
         errorMsg = "Email must be filled"
         return false;
     }
@@ -156,7 +197,7 @@ function validateEmail(str){
         return false;
     }
     let domainName = str.substring(str.indexOf('@') + 1, str.indexOf('.'));
-    if(domainName.length < 0){
+    if(domainName.length <= 0){
         errorMsg = "Please use a valid email"
         return false;
     }

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>KEYU Music | Login</title>
     <script defer src="./script.js"></script>
+    <link rel="icon" href="../assets/logo1.png" type="image/x-icon">
     <link rel="stylesheet" href="./style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -24,26 +25,27 @@
                             <h4>Music</h4>
                         </div>
                         <h1>Login</h1>
-                        <form action="" name="loginForm">
+                        <form action="" name="loginForm" onsubmit="validateLogin()">
                             <div class="form-box">
-                                <input type="text" name="login-username" id="login-username" placeholder="Username">
+                                <input type="text" name="login-email" id="login-username" placeholder="Email">
                             </div>
-                            <span class="err-message" id="l-username-err"></span>
+                            <span class="err-message" id="login-username-err"></span>
                             <div class="form-box">
                                 <input type="password" name="login-password" id="login-password" placeholder="Password">
                                 <label class="password-label" for="l-password-toggle"><i class="fa fa-eye" id="eye-logo" style="color:white"></i></label>
                                 <input type="checkbox" id="l-password-toggle" onclick="showLoginPassword()">
                             </div>
-                            <span class="err-message" id="l-password-err"></span>
+                            <span class="err-message" id="login-password-err"></span>
                             <div class="remember-me-div">
                                 <input type="checkbox" id="remember-me">
                                 <label class="remember-me-label" for="remember-me">Remember Me</label>
-                                <span></span>
                             </div>
+                            <br>
+                            <span class="err-message" id="login-error"></span>
                             <br><br>
                             <button class="form-button">Sign in</button>
                         </form>
-                        <br><br><br><br>
+                        <br><br><br>
                         <div class="login-extra">
                             <div class="google-login">
                                 <img src="../assets/logos/google.png"></img>
@@ -106,7 +108,7 @@
                             </div>
                             <span class="err-message" id="r-birthday-err"></span> 
                             <br>
-                            <button type="submit" class="form-button">Register</button>
+                            <button type="submit" class="form-button">Sign Up</button>
                         </form>
                         <div class="login-extra">
                             <p>Already have an acoount? <a id="register-button">Login here!</a></p>

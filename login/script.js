@@ -88,7 +88,7 @@ function validateLogin(){
     }
 
     if(emailVal === checkUser["email"] && passwordVal === checkUser["password"]){
-        document.cookie 
+        document.cookie = JSON.stringify(checkUser)
         return;
     }
     else {

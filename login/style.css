@@ -53,6 +53,45 @@ input:focus{
     height: inherit;
     animation: 45s linear infinite crawl;
     background-position-y: top;
+    position: relative;
+}
+
+#toast-notif{
+    position: absolute;
+    width: 24vw;
+    height: 8.5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--hot_pink);
+    visibility: hidden;
+}
+
+.show-notif{
+    visibility: visible;
+
+}
+
+@keyframes fade-in{
+    from{
+        top: -10%; 
+        opacity: 0;
+    }
+    to{
+        top: 5%; 
+        opacity: 100;
+    }
+}
+
+@keyframes fade-out{
+    from{
+        top: 5%; 
+        opacity: 100;
+    }
+    to{
+        top: -10%; 
+        opacity: 0;
+    }
 }
 
 @keyframes crawl {

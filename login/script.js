@@ -4,12 +4,12 @@ let registerButton = document.getElementById('register-button');
 
 loginButton.addEventListener('click', () =>{
     document.querySelector('#flipper').classList.toggle("flip")
-    document.title = "KEYU Music | Register"
+    document.title = " Register | KEYU Music"
 })
 
 registerButton.addEventListener('click', () => {
     document.querySelector('#flipper').classList.toggle("flip")
-    document.title = "KEYU Music | Login"
+    document.title = "Login | KEYU Music"
 })
 
 //Password Toggle
@@ -57,9 +57,29 @@ loginForm.addEventListener('submit', (e) => {
     e.preventDefault();
 })
 
+const toast = document.getElementsByClassName('toast-notif')[0];
+function showToastNotif(){
+    toast.classList.add("show-notif");
+    setTimeout(() => {
+        toast.classList.remove("show-notif");
+    }, 3000)
+    toast.children.innerText = "";
+}
+
+function expireDate(bool){
+    const date = new Date();
+    if(bool === true){
+        date.setDate(date.getDay() + 7);
+    }else{
+        date.setHours(date.getHours() + 3);
+    }
+    return "; expires: " + date + ";"
+}
+
 function validateLogin(){
     const emailVal = loginForm.elements['login-email'].value;
     const passwordVal = loginForm.elements['login-password'].value;
+    const rememberVal = document.querySelector('#remember-me').checked;
 
     if(emailVal.length <= 0){
         document.getElementById('login-username-err').innerText = "Username must be filled"
@@ -88,7 +108,9 @@ function validateLogin(){
     }
 
     if(emailVal === checkUser["email"] && passwordVal === checkUser["password"]){
-        document.cookie = JSON.stringify(checkUser)
+        document.cookie = JSON.stringify(checkUser) + expireDate(rememberVal)
+        toast.children.innerText = "Login Successfully!";
+        showToastNotif()
         return;
     }
     else {
@@ -302,5 +324,7 @@ function validateRegister(){
 
     if(isValid){
         new User(usernameVal, emailVal, passwordVal, getBday(bdayDateVal, bdayMonthVal, bdayYearVal))
+        toast.children.innerText = "Register Successfully!";
+        showToastNotif();
     }
 }

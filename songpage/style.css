@@ -1,11 +1,12 @@
 *{
-    margin: 0;
-    padding: 0;
-    box-sizing: content-box;   
+    padding: 0px;
+    margin: 0px;
+    box-sizing: content-box;
 }
 
-a{
-    text-decoration: none;
+body{
+    overflow-x: hidden;
+    background-color: var(--black);
 }
 
 :root{
@@ -21,9 +22,8 @@ a{
     --cloud: #C5C6D0;
 }
 
-body{
-    background-color: var(--obsidian);
-    overflow-x: hidden;
+a{
+    text-decoration: none;
 }
 
 #nav-bar{
@@ -37,7 +37,7 @@ body{
     justify-content: space-between;
     background-color: var(--navy_blue);
     box-shadow: -1rem 0 3rem #000;
-    z-index: 100;
+    z-index: 10;
 }
 
 #nav-bar.sticky{
@@ -131,62 +131,119 @@ body{
     border-bottom: 2px solid var(--deep_pink);
 }
 
-.hero-section{
+#footer{
     width: 100%;
-    height: 450px;
-    background-image: linear-gradient(to bottom, #012357 20%, #3d2868, #6c2770, #97236e, #bd2463);
-}
-#hero-canvas{
-    width: inherit;
-    height: inherit;
-    position: absolute;
-    z-index: 1;
-}
-.lyrics-section{
-    height: 1000px;
-    background-image: linear-gradient(rgba(189, 36, 99, 0.9) 0%, transparent 20%);
-}
-#hero-div{
-    width: 100%;
-    height: 450px;
-    position: relative;
-}
-.hero-container{
-    background-color: transparent;
-    width: 74vw;
-    height: 48vh;
+    height: 400px;
+    background-color: var(--obsidian);
     display: flex;
-    flex-direction: row;
+    justify-content: center;
+}
+
+.footer-text{
+    display: flex;
     align-items: center;
-    gap: 2vw;
-    position: absolute;
-    left: 15%;
-    top: 20%;
-    z-index: 10;
+    flex-direction: row;
+    justify-content: start;
+    gap: 10vw;
+    width: 100%;
+    padding-top: 8vh;
 }
-.hero-container > img{
-    width: 270px;
-    height: 270px;
+
+.footer-container{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 4vh;
+    align-items: center;
+    justify-content: center;
+    height: inherit;
+    width: fit-content;
 }
-.album-details{
+
+.footer-list{
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    width: 260px;
+    height: fit-content;
+    gap: 20px;
 }
 
-.album-details > h1{
-    font-size: 5em;
-    color: whitesmoke;
+.footer-list > h1{
+    color: var(--whitesmoke);
+    font-family: "Open Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+    font-size: clamp(1.8rem, 2.2vw, 1.6rem);
 }
 
-.album-details > h2{
-    font-size: 2em;
-    color: whitesmoke;
+.footer-list > ol {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    gap: 24px;
+    font-size: 1.6rem;
 }
 
-.album-details > h3{
-    font-size: 1em;
-    color: whitesmoke;
+.footer-list > ol > li > a{
+    color: var(--cloud);
+    font-family: "Open Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: clamp(1.5rem, 2vw, 1.5rem);;
+    text-decoration: none;
+    transition: 0.16s ease-in-out;
+}
+
+.footer-list > ol > li > a:hover{
+    color: var(--whitesmoke);
+}
+
+.footer-logo{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    gap: 10vw;
+}
+
+.social-media{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2vw;
+}
+.social-media > a > img{
+    width: 40px;
+    height: 40px
+}
+.copyright{
+    display: flex;
+    align-items: center;
+}
+.copyright > h1{
+    color: rgba(255,255,255, 0.25);
+    font-size: 1.1em;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+@media screen and (max-width: 1080px){
+    #footer{
+        height: fit-content;
+    }
+
+    .footer-text, .footer-logo{
+        flex-direction: column;
+    }
+
+    .footer-logo{
+        gap: 1vh;
+    }
+
+    .footer-logo > .nav-logo{
+        padding-left: 0px;
+    }
 }
 
 @media screen and (max-width: 768px){
@@ -196,10 +253,10 @@ body{
     #burger-menu{
         display: block;
     }
+
     #nav-bar{
         flex-direction: column;
         align-items: start;
-        z-index: 100;
     }
 
     .nav-buttons{
@@ -242,12 +299,5 @@ body{
         background-color: var(--navy_blue);
         border-bottom: 2px solid var(--deep_pink);
     }
+
 }
-
-
-
-
-
-
-
-

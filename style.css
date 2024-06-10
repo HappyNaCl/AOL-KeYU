@@ -22,6 +22,10 @@ body{
     --cloud: #C5C6D0;
 }
 
+a{
+    text-decoration: none;
+}
+
 #nav-bar{
     width: 100vw;
     height: fit-content;

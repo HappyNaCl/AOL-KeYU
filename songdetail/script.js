@@ -170,6 +170,10 @@ function animate(){
     ctx.clearRect(0,0, width, height);
 
     for(let i = 0; i < stars.length; i++){
+        if(stars[i].x < 0 || stars[i].y < 0 || stars[i].x > width || stars[i].y > height){
+            stars[i].x = rng(0, width /2)
+            stars[i].y = rng(0, height /2)
+        } 
         stars[i].update();
     }
 
@@ -212,6 +216,8 @@ setInterval(() => {
         shootStar();
     }
 }, interval)
+
+//Navbar
 
 const toggleButton = document.getElementById('burger-menu');
 const navbarLinks = document.getElementsByClassName('nav-buttons')[0];

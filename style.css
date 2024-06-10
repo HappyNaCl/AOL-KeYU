@@ -687,6 +687,7 @@ body{
     }
     #burger-menu{
         display: block;
+        padding-right: 10px;
     }
 
     #nav-bar{

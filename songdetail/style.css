@@ -31,13 +31,14 @@ body{
     top: 0;
     align-items: center;
     justify-content: space-between;
-    background-color: var(--navy_blue);
+    background-color: rgba(6, 0, 71, 0.4);
     box-shadow: -1rem 0 3rem #000;
     z-index: 100;
 }
 
 #nav-bar.sticky{
     position: fixed;
+    background-color: var(--navy_blue);
 }
 
 .nav-logo{
@@ -138,10 +139,28 @@ body{
     position: absolute;
     z-index: 1;
 }
+
 .lyrics-section{
     height: 1000px;
     background-image: linear-gradient(rgba(189, 36, 99, 0.9) 0%, transparent 20%);
+    display: flex;
+    flex-direction: column;
+    padding: 4vh 12vw;
+    gap: 2vh;
 }
+
+.lyrics-div{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.lyrics{
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
 #hero-div{
     width: 100%;
     height: 450px;
@@ -154,35 +173,43 @@ body{
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 2vw;
+    gap: 40px;
     position: absolute;
-    left: 15%;
+    left: max(10vw, 12vw);
     top: 20%;
     z-index: 10;
 }
 .hero-container > img{
     width: 270px;
     height: 270px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 .album-details{
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    align-self: flex-end;
+    padding-bottom: 4.4vh;
+    font-family: "Radio Canada Big", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
 }
 
 .album-details > h1{
-    font-size: 5em;
+    font-size: clamp(2.6rem, 10vw, 5.6rem);
     color: whitesmoke;
+    font-weight: 200;
 }
 
 .album-details > h2{
-    font-size: 2em;
+    font-size: clamp(1rem, 2.4vw, 4rem);
     color: whitesmoke;
+    font-weight: 400;
 }
 
 .album-details > h3{
     font-size: 1em;
     color: whitesmoke;
+    font-weight: 300;
 }
 
 @media screen and (max-width: 768px){
@@ -191,6 +218,7 @@ body{
     }
     #burger-menu{
         display: block;
+        padding-right: 10px;
     }
     #nav-bar{
         flex-direction: column;

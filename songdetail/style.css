@@ -143,7 +143,6 @@ body{
     position: absolute;
     z-index: 1;
 }
-
 #hero-div{
     width: 100%;
     height: 450px;
@@ -159,7 +158,7 @@ body{
     gap: 40px;
     position: absolute;
     left: max(10vw, 12vw);
-    top: 20%;
+    top: 24%;
     z-index: 10;
 }
 .hero-container > img{
@@ -189,22 +188,84 @@ body{
     font-weight: 400;
 }
 
-.lyrics-section{
-    height: 1000px;
-    background-image: linear-gradient(rgba(189, 36, 99, 0.9) 0%, transparent 20%);
-    display: flex;
-    flex-direction: column;
-    padding: 4vh 12vw;
-    gap: 2vh;
+.extras{
+    gap: 12px;
+    padding-bottom: 24px;
+    align-items: center;
 }
 
+#play-button{
+    width: 64px;
+    height: 64px;
+    border-radius: 100%;
+    border: none;
+    background-color: var(--darker_navy_blue);
+    transition: 0.2s ease-in-out;
+}
+
+#play-button:hover{
+    background-color: var(--navy_blue);
+}
+
+#play-button:hover > i{
+    font-size: x-large;
+}
+
+#play-button > i{
+    color: var(--whitesmoke);
+    font-size: 20px;
+    transition: 0.2s ease-in-out;
+}
+
+#like-button{
+    width: 64px;
+    height: 64px;
+    border-radius: 100%;
+    border: none;
+    background-color: transparent;
+}
+
+#like-button > i{
+    color: var(--whitesmoke);
+    font-size: 30px;
+    transition: 0.2s ease-in-out;
+}
+
+#like-button:hover > i{
+    font-size: x-large;
+}
+
+#opt-button{
+    width: 64px;
+    height: 64px;
+    border: none;
+    background-color: transparent;
+    transition: 0.2s ease-in-out;
+}
+
+#opt-button > i{
+    font-size: 30px;
+    color: var(--whitesmoke);
+}
+
+#opt-button:hover > i{
+    color: var(--cloud);
+}
+
+.main-section{
+    height: fit-content;
+    background-image: linear-gradient(rgba(189, 36, 99, 0.9), transparent 120px);
+    display: flex;
+    flex-direction: column;
+    padding: 4vh 9.2vw;
+    gap: 2vh;
+}
 .lyrics-div{
     display: flex;
     flex-direction: column;
     gap: 20px;
-    padding: 24px 0px;
+    padding-bottom: 10px;
 }
-
 .accordion{
     background-color: transparent;
     cursor: pointer;
@@ -217,18 +278,50 @@ body{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    border-bottom: 1px solid var(--cloud);
+    border-top: 1px solid var(--cloud);
+    padding: 2vh 1vw;
+}
+
+.credits-div{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-bottom: 10px;
 }
 
 .panel{
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.5s ease-in-out;
+    transition: max-height 0.25s ease-in-out;
+    gap: 20px;
+    height: fit-content;
+}
+
+.flex-col{
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-row{
+    display: flex;
+    flex-direction: row;
+}
+
+.divider{
+    border: 0.2px solid gray;
+    padding-left: 1vw;
 }
 
 .lyrics{
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 4px;
+}
+
+.recommend-section{
+    justify-content: center;
+    align-items: center;
 }
 
 .lyrics > p{
@@ -238,6 +331,246 @@ body{
     font-weight: 300;
     font-style: normal;
     font-size: 1.5em;
+}
+.credits{
+    gap: 10px;
+    align-items: center;
+    padding-left: 1vw;
+}
+.credits > h1{
+    color: whitesmoke;
+    width: 300px;
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.person-profile{
+    gap: 12px;
+    align-items: center;
+}
+
+.person-profile > img{
+    width: 80px;
+    height: 80px;
+    border-radius: 100%;
+}
+
+.person-profile > h3{
+    color: whitesmoke;
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 800;
+    font-style: normal;
+}
+
+
+#footer{
+    width: 100%;
+    height: 400px;
+    background-color: var(--obsidian);
+    display: flex;
+    justify-content: center;
+}
+
+.footer-text{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: start;
+    gap: 10vw;
+    width: 100%;
+    padding-top: 8vh;
+}
+
+.footer-container{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 4vh;
+    align-items: center;
+    justify-content: center;
+    height: inherit;
+    width: fit-content;
+}
+
+.footer-list{
+    display: flex;
+    flex-direction: column;
+    width: 260px;
+    height: fit-content;
+    gap: 20px;
+}
+
+.footer-list > h1{
+    color: var(--whitesmoke);
+    font-family: "Open Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+    font-size: clamp(1.8rem, 2.2vw, 1.6rem);
+}
+
+.footer-list > ol {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    gap: 24px;
+    font-size: 1.6rem;
+}
+
+.footer-list > ol > li > a{
+    color: var(--cloud);
+    font-family: "Open Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: clamp(1.5rem, 2vw, 1.5rem);;
+    text-decoration: none;
+    transition: 0.16s ease-in-out;
+}
+
+.footer-list > ol > li > a:hover{
+    color: var(--whitesmoke);
+}
+
+.footer-logo{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    gap: 10vw;
+}
+
+.social-media{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2vw;
+}
+
+.social-media > a > img{
+    width: 40px;
+    height: 40px
+}
+
+.social-media > a > img:hover{
+    opacity: 0.8;
+}
+.copyright{
+    display: flex;
+    align-items: center;
+}
+.copyright > h1{
+    color: rgba(255,255,255, 0.25);
+    font-size: 1.1em;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.carousel{
+    width: 82%;
+    position: relative;
+}
+
+.inner-carousel{
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+}
+
+.track{
+    display: inline-flex;
+    height: 100%;
+    transition: transform 0.5s ease-in-out;
+    gap: 12px;
+}
+
+.song-card{
+    width: 300px;
+    height: 400px;
+    background-color: var(--navy_blue);
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+    flex-shrink: 0;
+}
+
+.song-details{
+    width: 80%;
+    padding: 0px 20px;
+    gap: 4px;
+    color: var(--whitesmoke);
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 800;
+    font-style: normal;
+}
+
+.song-details > h3{
+    font-size: 1.6em;
+}
+
+.song-details > h4{
+    font-size: 1em;
+}
+
+.song-card > img{
+    width: 240px;
+    height: 240px;
+    border-radius: 4px;
+}
+
+.carousel-button button{
+    position: absolute;
+    top: 40%;
+    transform: translateY(-50%);
+    height: 80%;
+    width: 24px;
+    border: none;
+    border-radius: 4px;
+    background-color: var(--deep_pink);
+    cursor: pointer;
+}
+
+.carousel-button button > i{
+    font-size: 20px;
+    color: var(--whitesmoke);
+}
+
+.carousel-button .prev{
+    left: -2%;
+    display: none;
+}
+
+.carousel-button .prev.show{
+    display: block;
+}
+
+.carousel-button .next{
+    right: -2%;
+}
+
+.carousel-button .next.hide{
+    display: none;
+}
+
+@media screen and (max-width: 1080px){
+    #footer{
+        height: fit-content;
+        padding-bottom: 24px;
+    }
+
+    .footer-text, .footer-logo{
+        flex-direction: column;
+    }
+
+    .footer-logo{
+        gap: 1vh;
+    }
+    
+    .footer-logo > .nav-logo{
+        width: inherit;
+        padding-left: 0px;
+        justify-content: center;
+    }
 }
 
 @media screen and (max-width: 768px){

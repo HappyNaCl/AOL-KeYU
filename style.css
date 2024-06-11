@@ -585,6 +585,11 @@ a{
     font-size: 1.1em;
     font-family: 'Times New Roman', Times, serif;
 }
+
+.social-media > a > img:hover{
+    opacity: 0.8;
+}
+
 .card-hidden{
     opacity: 0;
     filter: blur(5px);

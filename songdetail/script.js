@@ -240,16 +240,75 @@ window.addEventListener('scroll', stickNavbar);
 
 
 //Accordion
-
-let accord = document.getElementsByClassName('accordion');
+const accord = document.getElementsByClassName('accordion');
 for(let i = 0; i < accord.length; i++){
     accord[i].addEventListener('click', () => {
-        accord[i].classList.toggle("active");
         let panel = accord[i].nextElementSibling;
+        console.log(i);
         if(panel.style.maxHeight){  
             panel.style.maxHeight = null;
+            const accordIcon = accord[i].children[0];
+            accordIcon.classList.replace('fa-minus', 'fa-plus')
         }else{
             panel.style.maxHeight = panel.scrollHeight + "px";
+            const accordIcon = accord[i].children[0];
+            accordIcon.classList.replace('fa-plus', 'fa-minus');
         }
     })
 }
+
+//Like Button
+const likeButton = document.getElementById('like-button');
+let isLiked = false;
+likeButton.addEventListener('click', () => {
+    if(!isLiked){
+        const heart = likeButton.children[0];
+        heart.classList.remove(...heart.classList);
+        heart.classList.add('fa', 'fa-heart');
+        heart.style.color = "var(--hot_pink)";
+        isLiked = true;
+    }else{
+        const heart = likeButton.children[0];
+        heart.classList.remove(...heart.classList);
+        heart.classList.add('far', 'fa-heart');
+        heart.style.color = "whitesmoke";
+        isLiked = false;
+    }
+})
+
+
+//Carousel
+
+const prev = document.getElementsByClassName('prev')[0];
+const next = document.getElementsByClassName('next')[0];
+const carousel = document.querySelector('.carousel');
+const track = document.querySelector('.track');
+
+let carouselWidth = carousel.offsetWidth;
+let index = 0;
+
+window.addEventListener('resize', ()=>{
+    carouselWidth = carousel.offsetWidth;
+})
+
+next.addEventListener('click', (e) => {
+    e.preventDefault();
+    setTimeout(function(){}, 1000);
+    index++;
+    prev.classList.add('show');
+    track.style.transform = `translateX(${(index * (-carouselWidth)) }px)`
+    if(track.offsetWidth - index * (carouselWidth) < index * (carouselWidth)){
+        next.classList.add('hide');
+    }
+})
+
+prev.addEventListener('click', (e) => {
+    e.preventDefault();
+    setTimeout(function(){}, 1000);
+    index--;
+    next.classList.remove('hide');
+    if(index === 0){
+        prev.classList.remove("show");
+    }
+    track.style.transform = `translateX(${index * (-carouselWidth)}px)`
+})

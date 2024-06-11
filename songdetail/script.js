@@ -19,7 +19,7 @@ let speed = {
 }
 let lifetime = 750
 let paused = false;
-let interval = 1800;
+let interval = 1650;
 
 
 window.addEventListener("focus", () => {
@@ -218,7 +218,6 @@ setInterval(() => {
 }, interval)
 
 //Navbar
-
 const toggleButton = document.getElementById('burger-menu');
 const navbarLinks = document.getElementsByClassName('nav-buttons')[0];
 
@@ -237,15 +236,20 @@ function stickNavbar(){
     }
 }
 
-window.addEventListener('scroll', stickNavbar)
+window.addEventListener('scroll', stickNavbar);
 
-//Scroll Animations
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-        if(entry.isIntersecting){
-            entry.target.classList.add('show')
+
+//Accordion
+
+let accord = document.getElementsByClassName('accordion');
+for(let i = 0; i < accord.length; i++){
+    accord[i].addEventListener('click', () => {
+        accord[i].classList.toggle("active");
+        let panel = accord[i].nextElementSibling;
+        if(panel.style.maxHeight){  
+            panel.style.maxHeight = null;
         }else{
-            entry.target.classList.remove('show')
+            panel.style.maxHeight = panel.scrollHeight + "px";
         }
     })
-})
+}

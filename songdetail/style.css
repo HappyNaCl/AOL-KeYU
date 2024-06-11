@@ -144,27 +144,6 @@ body{
     z-index: 1;
 }
 
-.lyrics-section{
-    height: 1000px;
-    background-image: linear-gradient(rgba(189, 36, 99, 0.9) 0%, transparent 20%);
-    display: flex;
-    flex-direction: column;
-    padding: 4vh 12vw;
-    gap: 2vh;
-}
-
-.lyrics-div{
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.lyrics{
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-}
-
 #hero-div{
     width: 100%;
     height: 450px;
@@ -173,7 +152,7 @@ body{
 .hero-container{
     background-color: transparent;
     width: 74vw;
-    height: 48vh;
+    height: fit-content;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -188,11 +167,11 @@ body{
     height: 270px;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
+
 .album-details{
     display: flex;
     flex-direction: column;
     align-self: flex-end;
-    padding-bottom: 4.4vh;
     font-family: "Radio Canada Big", sans-serif;
     font-optical-sizing: auto;
     font-style: normal;
@@ -210,10 +189,55 @@ body{
     font-weight: 400;
 }
 
-.album-details > h3{
-    font-size: 1em;
-    color: whitesmoke;
+.lyrics-section{
+    height: 1000px;
+    background-image: linear-gradient(rgba(189, 36, 99, 0.9) 0%, transparent 20%);
+    display: flex;
+    flex-direction: column;
+    padding: 4vh 12vw;
+    gap: 2vh;
+}
+
+.lyrics-div{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 24px 0px;
+}
+
+.accordion{
+    background-color: transparent;
+    cursor: pointer;
+    border: none;
+    color: var(--whitesmoke);
+    font-family: "Radio Canada Big", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-size: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.panel{
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-in-out;
+}
+
+.lyrics{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.lyrics > p{
+    color: var(--whitesmoke);
+    font-family: "M PLUS 1", sans-serif;
+    font-optical-sizing: auto;
     font-weight: 300;
+    font-style: normal;
+    font-size: 1.5em;
 }
 
 @media screen and (max-width: 768px){
@@ -269,6 +293,10 @@ body{
     #nav-reg:hover{
         background-color: var(--navy_blue);
         border-bottom: 2px solid var(--deep_pink);
+    }
+
+    .hero-container{
+        top: 25%
     }
 }
 

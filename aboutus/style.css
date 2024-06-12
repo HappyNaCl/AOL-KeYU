@@ -216,7 +216,10 @@ a{
 }
 .social-media > a > img{
     width: 40px;
-    height: 40px
+    height: 40px;
+}
+.social-media > a > img:hover{
+    opacity: 0.5;
 }
 .copyright{
     display: flex;

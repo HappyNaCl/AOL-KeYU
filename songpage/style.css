@@ -26,6 +26,16 @@ a{
     text-decoration: none;
 }
 
+.flex-col{
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-row{
+    display: flex;
+    flex-direction: row;
+}
+
 #nav-bar{
     width: 100vw;
     height: fit-content;
@@ -131,6 +141,113 @@ a{
     border-bottom: 2px solid var(--deep_pink);
 }
 
+.list-section{
+    padding-top: 13vh;
+    padding-bottom: 7vh;
+    width: 100%;
+    height: fit-content;
+}
+
+.list-container{
+    padding: 0px 8vw;  
+    width: 100%;  
+}
+.list-container > h1{
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 2em;
+    color: whitesmoke;
+}
+
+.full-carousel{
+    width: 82%;
+    height: fit-content;
+    position: relative;
+}
+
+.full-inner-carousel{
+    width: 100%;
+    height: fit-content;
+    overflow: hidden;
+}
+
+.full-track{
+    display: inline-flex;
+    height: 100%;
+    transition: transform 0.5s ease-in-out;
+    gap: 60px;
+}
+
+.divider{
+    border: solid 1px var(--cloud);
+}
+
+.trending-list{
+    width: 360px;
+    height: fit-content;
+}
+
+.trending-card{
+    height: 72px;
+    width: inherit;
+    gap: 24px;
+    align-items: center;
+}
+
+.trending-card > img{
+    width: 64px;
+    height: 64px;
+    border-radius: 10px;
+}
+
+.trending-details{
+    color: whitesmoke;
+    font-family: "Noto Sans JP", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+.trending-title{
+    font-size: 1.3em;
+    font-weight: 400;
+}
+
+.trending-artist{
+    font-size: 0.8em;
+    font-weight: 200;
+}
+
+.full-buttons button{
+    position: absolute;
+    background-color: transparent;
+    top: 41%;
+    border: none;
+    color: var(--whitesmoke);
+    font-size: 4em;
+    cursor: pointer;
+}
+
+.full-buttons .full-prev{
+    left: -4%;
+    display: none;
+}
+
+.full-buttons .full-prev.show{
+    display: block;
+}
+
+.full-buttons .full-next{
+    right: -4%;
+}
+
+.full-buttons .full-next.hide{
+    display: none;
+}
+
+
+
+
 #footer{
     width: 100%;
     height: 400px;
@@ -217,6 +334,9 @@ a{
 .social-media > a > img{
     width: 40px;
     height: 40px
+}
+.social-media > a > img:hover{
+    opacity: 0.5;
 }
 .copyright{
     display: flex;

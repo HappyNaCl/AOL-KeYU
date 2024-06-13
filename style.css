@@ -621,7 +621,19 @@ a{
 
 ::-webkit-scrollbar{
     width: 16px;
-    background-color: var(--hot_pink);
+}
+
+::-webkit-scrollbar-track{
+    background-color: var(--navy_blue);
+}
+
+::-webkit-scrollbar-thumb{
+    background: linear-gradient(to top,    
+    var(--darker_deep_pink) 20%,
+    var(--dark_pink) 35%,
+    var(--deep_pink) 70%,
+    var(--hot_pink) 100%);
+    border-radius: 10%;
 }
 
 @media(prefered-reduced-motion){
@@ -689,7 +701,9 @@ a{
     
 
     .footer-logo > .nav-logo{
+        width: inherit;
         padding-left: 0px;
+        justify-content: center;
     }
 }
 

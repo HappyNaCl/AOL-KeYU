@@ -142,14 +142,18 @@ a{
 }
 
 .list-section{
-    padding-top: 13vh;
-    padding-bottom: 7vh;
     width: 100%;
     height: fit-content;
+    padding-bottom: 8vh;
+}
+
+.news-section{
+    padding-top: 13vh;
+    padding-bottom: 8vh;
 }
 
 .list-container{
-    padding: 0px 8vw;  
+    padding: 1vh 8vw;  
     width: 100%;  
 }
 .list-container > h1{
@@ -158,6 +162,14 @@ a{
     font-style: normal;
     font-size: 2em;
     color: whitesmoke;
+    cursor: pointer;
+    padding-bottom: 1vh;
+}
+
+.list-container > h1 > span{
+    font-size: 0.6em;
+    color: grey;
+    text-align: center;
 }
 
 .full-carousel{
@@ -175,8 +187,9 @@ a{
 .full-track{
     display: inline-flex;
     height: 100%;
+    width: fit-content;
     transition: transform 0.5s ease-in-out;
-    gap: 60px;
+    gap: 6vw;
 }
 
 .divider{
@@ -193,12 +206,18 @@ a{
     width: inherit;
     gap: 24px;
     align-items: center;
+    cursor: pointer;
+}
+
+.trending-card:hover{
+    background-color:rgb(51, 51, 51);
 }
 
 .trending-card > img{
     width: 64px;
     height: 64px;
     border-radius: 10px;
+    padding-left: 0.5vw;
 }
 
 .trending-details{
@@ -216,6 +235,119 @@ a{
 .trending-artist{
     font-size: 0.8em;
     font-weight: 200;
+}
+
+.album-section{
+    height:fit-content;
+    padding-bottom: 8vh;
+}
+
+.album-card{
+    width: 280px;
+    height: fit-content;
+    gap: 8px;
+    cursor: pointer;
+}
+
+.album-container{
+    position: relative;
+    width: inherit;
+    height: 280px;
+}
+
+.album-container:hover{
+    .options{
+        opacity: 1;
+    }
+}
+
+.album-text{
+    color: whitesmoke;
+    font-family: "Noto Sans JP", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+.album-text > h1{
+    font-size: 1.3em;
+}
+.album-text > span{
+    font-size: 1.1em;
+}
+
+.options{
+    position: absolute;
+    width: inherit;
+    height: inherit;
+    align-items: end;
+    background-color: rgba(0,0,0, 0.4);
+    z-index: 4;
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+}
+
+.options-container{
+    padding: 16px;
+    width: inherit;
+    color: whitesmoke;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 20px;
+}
+
+.options-button{
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    background-color: rgb(40, 40, 40);
+    justify-content: center;
+    align-items: center;
+}
+
+.options-button:hover{
+    background-color: var(--hot_pink);
+    transition: background-color 0.2s ease-in-out;
+}
+
+.album-container > img{
+    position: absolute;
+    width: inherit;
+    height: inherit;
+}
+
+.news-container{
+    width: 650px;
+    height: fit-content;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.news-detail{
+    color: whitesmoke;
+}
+
+.news-detail > span{
+    font-family: "Oswald", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-style: normal;
+}
+
+.news-detail > h2{
+    font-family: "Open Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+}
+
+.news-detail > p{
+    font-family: "Kanit", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+}
+
+.news-image > img{
+    width: 650px;
+    height: auto;
 }
 
 .full-buttons button{

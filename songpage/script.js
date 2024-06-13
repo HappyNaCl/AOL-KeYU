@@ -28,8 +28,8 @@ const fullTracks = document.getElementsByClassName('full-track');
 let fullCarouselWidth = [];
 let fullCarouselIndex = [];
 for(let i = 0; i < fullCarousels.length; i++){
-    fullCarouselWidth.append(fullCarousels[i].offsetWidth);
-    fullCarouselIndex.append(0);
+    fullCarouselWidth.push(fullCarousels[i].offsetWidth);
+    fullCarouselIndex.push(0);
 }
 
 window.addEventListener('resize', ()=>{
@@ -42,12 +42,23 @@ for(let i = 0; i < fullCarousels.length; i++){
     fullNext[i].addEventListener('click', (e) => {
         e.preventDefault();
         setTimeout(function(){}, 1000);
-        index++;
+        fullCarouselIndex[i]++;
         fullPrev[i].classList.add('show');
         fullTracks[i].style.transform = `translateX(${ fullCarouselIndex[i] * (-fullCarouselWidth[i]) }px)`
-        if(fullTracks[i] - (fullCarouselIndex[i] * fullCarouselWidth[i]) <  (fullCarouselIndex[i] * fullCarouselWidth[i])){
+        if(fullTracks[i].offsetWidth - (fullCarouselIndex[i] * fullCarouselWidth[i]) <  (fullCarouselIndex[i] * fullCarouselWidth[i])){
             fullNext[i].classList.add('hide');
         }
+    })
+
+    fullPrev[i].addEventListener('click', (e) => {
+        e.preventDefault();
+        setTimeout(function(){}, 1000);
+        fullCarouselIndex[i]--;
+        fullNext[i].classList.remove('hide');
+        if(fullCarouselIndex[i] === 0){
+            fullPrev[i].classList.remove('show');
+        }
+        fullTracks[i].style.transform = `translateX(${ fullCarouselIndex[i] * (-fullCarouselWidth[i]) }px)`
     })
 }
 

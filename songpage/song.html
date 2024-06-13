@@ -14,11 +14,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet"> <!--foot-->
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" /> 
 </head>
 <body>
     <nav id="nav-bar">
-        <a href="./home.html">
+        <a href="../home.html">
             <div class="nav-logo">
                 <img src="../assets/logo1.png" alt="">
                 <h4>Music</h4>
@@ -29,22 +31,66 @@
         </a>
         <ul class="nav-buttons">
             <li>
-                <a id="nav-normal" href="./home.html">Home</a>
+                <a id="nav-normal" href="../home.html">Home</a>
             </li>
             <li>
-                <a id="nav-normal" href="">About Us</a>
+                <a id="nav-normal" href="../aboutus/about.html">About Us</a>
             </li>
             <li>
-                <a id="nav-login" href="./login/login.html">Login</a>
+                <a id="nav-login" href="../login/login.html">Login</a>
             </li>
             <li>
-                <a id="nav-reg" href="./login/login.html">Register</a>
+                <a id="nav-reg" href="../login/login.html">Register</a>
             </li>
         </ul>
     </nav>
+    <section class="news-section flex-col">
+        <div class="list-container">
+            <div class="full-carousel">
+                <div class="full-inner-carousel">
+                    <div class="full-track" style="gap:4vw">
+                        <div class="news-container flex-col">
+                            <div class="news-detail flex-col">
+                                <p>CONCERT</p>
+                                <h2>Magical Mirai 2024 Date Announcement</h2>
+                                <span>VOCALOID</span>
+                            </div>
+                            <div class="news-image">
+                                <img src="../assets/news/magicalmirai.jpg" alt="">
+                            </div>
+                        </div>
+                        <div class="news-container flex-col">
+                            <div class="news-detail flex-col">
+                                <p>CONCERT</p>
+                                <h2>HOLOLIVE World Tour "Soar" Reveal</h2>
+                                <span>VTUBERS</span>
+                            </div>
+                            <div class="news-image">
+                                <img src="../assets/news/SOAR_KV.png" alt="">
+                            </div>
+                        </div>
+                        <div class="news-container flex-col">
+                            <div class="news-detail flex-col">
+                                <p>SAD NEWS</p>
+                                <h2>Cancellation of TUYU 5th Anniversary Live</h2>
+                                <span>J-POP</span>
+                            </div>
+                            <div class="news-image">
+                                <img src="../assets/news/tuyu_livetour2023__bnr_livepage_1088x614px.jpg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="full-buttons">
+                    <button class="full-prev"> < </button>
+                    <button class="full-next"> > </button>
+                </div>
+            </div>
+        </div>
+    </section>
     <section class="list-section flex-col">
         <div class="list-container">
-            <h1>Trending Songs</h1>
+            <h1>Trending Songs <span>></span></h1>
             <div class="full-carousel">
                 <div class="full-inner-carousel">
                     <div class="full-track">
@@ -155,7 +201,7 @@
                             </div>
                             <div class="divider"></div>
                         </div>
-                            <div class="trending-list flex-col">
+                        <div class="trending-list flex-col">
                                 <div class="divider"></div>
                                 <div class="trending-card flex-row">
                                     <img src="../assets/songCover/beatsyncer.jfif" alt="">
@@ -174,7 +220,7 @@
                                 </div>
                                 <div class="divider"></div>
                                 <div class="trending-card flex-row">
-                                    <img src="../assets/songCover/aikotoba3.jpg" alt="">
+                                    <img src="../assets/songCover/aikotoba4.jpg" alt="">
                                     <div class="trending-details flex-col">
                                     <span class="trending-title">愛言葉Ⅳ</span>
                                     <span class="trending-artist">DECO*27 feat. Hatsune Miku</span>
@@ -190,8 +236,60 @@
                                 </div>
                                 <div class="divider"></div>
                         </div>
-                        <div class="trending-list flex-col"></div>
-                        <div class="trending-list flex-col"></div>
+                        <div class="trending-list flex-col">
+                            <div class="divider"></div>
+                            <div class="trending-card flex-row">
+                                <img src="../assets/songCover/eineklein.jpg" alt="">
+                                <div class="trending-details flex-col">
+                                <span class="trending-title">アイネクライネ</span>
+                                <span class="trending-artist">Kenshi Yonezu</span>
+                                </div>
+                            </div>
+                            <div class="divider"></div>
+                            <div class="trending-card flex-row">
+                                <img src="../assets/songCover/imglad.jpg" alt="">
+                                <div class="trending-details flex-col">
+                                <span class="trending-title">やきみも悪い人でよかった</span>
+                                <span class="trending-artist">PinocchioP</span>
+                                </div>
+                            </div>
+                            <div class="divider"></div>
+                            <div class="trending-card flex-row">
+                                <img src="../assets/songCover/animal.jpg" alt="">
+                                <div class="trending-details flex-col">
+                                <span class="trending-title">アニマル</span>
+                                <span class="trending-artist">DECO*27 feat. Hatsune Miku</span>
+                                </div>
+                            </div>
+                            <div class="divider"></div>
+                            <div class="trending-card flex-row">
+                                <img src="../assets/songCover/karakuri.webp" alt="">
+                                <div class="trending-details flex-col">
+                                <span class="trending-title">からくりピエロ</span>
+                                <span class="trending-artist">40mP feat. Hatsune Miku</span>
+                                </div>
+                            </div>
+                            <div class="divider"></div>
+                        </div>
+                        <div class="trending-list flex-col">
+                            <div class="divider"></div>
+                            <div class="trending-card flex-row">
+                                <img src="../assets/songCover/odo.jpg" alt="">
+                                <div class="trending-details flex-col">
+                                <span class="trending-title">Odo</span>
+                                <span class="trending-artist">Ado</span>
+                                </div>
+                            </div>
+                            <div class="divider"></div>
+                            <div class="trending-card flex-row">
+                                <img src="../assets/songCover/parasit.jpg" alt="">
+                                <div class="trending-details flex-col">
+                                <span class="trending-title">Parasite</span>
+                                <span class="trending-artist">DECO*27 feat. Hatsune Miku</span>
+                                </div>
+                            </div>
+                            <div class="divider"></div>
+                        </div>
                     </div>
                 </div>
                 <div class="full-buttons">
@@ -201,16 +299,162 @@
             </div>
         </div>
     </section>
-
-
+    <section class="album-section flex-col">
+        <div class="list-container">
+            <h1>June's HIT Album <span>></span></h1>
+            <div class="full-carousel">
+                <div class="full-inner-carousel">
+                    <div class="full-track" style="gap: 1vw">
+                        <div class="album-card flex-col">
+                            <div class="album-container">
+                                <div class="options flex-row">
+                                    <div class="options-container flex-row">
+                                        <div class="options-button flex-col">
+                                            <i class="fa fa-play"></i>
+                                        </div>
+                                        <div class="options-button flex-col">
+                                            <i class="fa fa-ellipsis-h"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <img src="../assets/songCover/zodiacalbum.jpg" alt="">
+                            </div>
+                            <div class="album-text flex-col">
+                                <h1>ZODIAC</h1>
+                                <span>Hakos Baelz</span>
+                            </div>
+                        </div>
+                        <div class="album-card flex-col">
+                            <div class="album-container">
+                                <div class="options flex-row">
+                                    <div class="options-container flex-row">
+                                        <div class="options-button flex-col">
+                                            <i class="fa fa-play"></i>
+                                        </div>
+                                        <div class="options-button flex-col">
+                                            <i class="fa fa-ellipsis-h"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <img src="../assets/songCover/suisei.jfif" alt="">
+                            </div>
+                            <div class="album-text flex-col">
+                                <h1>SPECTER</h1>
+                                <span>星街すいせい</span>
+                            </div>
+                        </div>
+                        <div class="album-card flex-col">
+                            <div class="album-container">
+                                <div class="options flex-row">
+                                    <div class="options-container flex-row">
+                                        <div class="options-button flex-col">
+                                            <i class="fa fa-play"></i>
+                                        </div>
+                                        <div class="options-button flex-col">
+                                            <i class="fa fa-ellipsis-h"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <img src="../assets/songCover/nenene.jpg" alt="">
+                            </div>
+                            <div class="album-text flex-col">
+                                <h1>ラヴ</h1>
+                                <span>PinocchioP</span>
+                            </div>
+                        </div>
+                        <div class="album-card flex-col">
+                            <div class="album-container">
+                                <div class="options flex-row">
+                                    <div class="options-container flex-row">
+                                        <div class="options-button flex-col">
+                                            <i class="fa fa-play"></i>
+                                        </div>
+                                        <div class="options-button flex-col">
+                                            <i class="fa fa-ellipsis-h"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <img src="../assets/songCover/neoneon.jpg" alt="">
+                            </div>
+                            <div class="album-text flex-col">
+                                <h1>Undead Alice</h1>
+                                <span>DECO*27</span>
+                            </div>
+                        </div>
+                        <div class="album-card flex-col">
+                            <div class="album-container">
+                                <div class="options flex-row">
+                                    <div class="options-container flex-row">
+                                        <div class="options-button flex-col">
+                                            <i class="fa fa-play"></i>
+                                        </div>
+                                        <div class="options-button flex-col">
+                                            <i class="fa fa-ellipsis-h"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <img src="../assets/songCover/joywithyou.jpg" alt="">
+                            </div>
+                            <div class="album-text flex-col">
+                                <h1>Journey</h1>
+                                <span>IRyS</span>
+                            </div>
+                        </div>
+                        <div class="album-card flex-col">
+                            <div class="album-container">
+                                <div class="options flex-row">
+                                    <div class="options-container flex-row">
+                                        <div class="options-button flex-col">
+                                            <i class="fa fa-play"></i>
+                                        </div>
+                                        <div class="options-button flex-col">
+                                            <i class="fa fa-ellipsis-h"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <img src="../assets/songCover/unhappy.jpg" alt="">
+                            </div>
+                            <div class="album-text flex-col">
+                                <h1>UNHAPPY REFRAIN</h1>
+                                <span>wowaka</span>
+                            </div>
+                        </div>
+                        <div class="album-card flex-col">
+                            <div class="album-container">
+                                <div class="options flex-row">
+                                    <div class="options-container flex-row">
+                                        <div class="options-button flex-col">
+                                            <i class="fa fa-play"></i>
+                                        </div>
+                                        <div class="options-button flex-col">
+                                            <i class="fa fa-ellipsis-h"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <img src="../assets/songCover/aimer.jpg" alt="">
+                            </div>
+                            <div class="album-text flex-col">
+                                <h1>Daydream</h1>
+                                <span>Aimer</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="full-buttons">
+                    <button class="full-prev"> < </button>
+                    <button class="full-next"> > </button>
+                </div>
+            </div>
+        </div>
+    </section>
     <footer id="footer">
         <div class="footer-container">
             <div class="footer-text">
                 <div class="footer-list">
                     <h1>Overview</h1>
                     <ol>
-                        <li><a href="">Song Lists</a></li>
-                        <li><a href="">About Us</a></li>
+                        <li><a href="../songpage/song.html">Song Lists</a></li>
+                        <li><a href="../aboutus/about.html">About Us</a></li>
                         <li><a href="">Artists in KeYU</a></li>
                     </ol>
                 </div>
@@ -218,15 +462,15 @@
                     <h1>Get Started</h1>
                     <ol>
                         <li><a href="">Download KeYU Music</a></li>
-                        <li><a href="">Register An Account</a></li>
+                        <li><a href="../login/login.html">Register An Account</a></li>
                         <li><a href="">Upload Your Song</a></li>
                     </ol>
                 </div>
                 <div class="footer-list">
                     <h1>Company</h1>
                     <ol>
-                        <li><a href="">What is KeYU?</a></li>
-                        <li><a href="">Song List</a></li>
+                        <li><a href="../aboutus/about.html">What is KeYU?</a></li>
+                        <li><a href="../songpage/song.html">Song List</a></li>
                         <li><a href="">Investors</a></li>
                     </ol>
                 </div>

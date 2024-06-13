@@ -110,7 +110,10 @@ function validateLogin(){
     if(emailVal === checkUser["email"] && passwordVal === checkUser["password"]){
         document.cookie = JSON.stringify(checkUser) + expireDate(rememberVal)
         toast.children.innerText = "Login Successfully!";
-        showToastNotif()
+        showToastNotif();
+        setTimeout(function() {
+            window.location.href = '../songpage/song.html' 
+        }, 4000);
         return;
     }
     else {

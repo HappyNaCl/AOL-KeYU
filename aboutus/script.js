@@ -18,3 +18,21 @@ function stickNavbar(){
 }
 
 window.addEventListener('scroll', stickNavbar)
+
+//Message Accordion
+function toggleMessage(){
+    let message = document.getElementsByClassName('message-panel')[0];
+    if(message.style.maxWidth){
+        const buttonIcon = document.getElementById('message-button').children[0];
+        const messages = document.getElementsByClassName('message')[0];
+        messages.style.opacity = 0;
+        buttonIcon.classList.replace('fa-arrow-right', 'fa-arrow-left');
+        message.style.maxWidth = null;
+    }else{
+        const buttonIcon = document.getElementById('message-button').children[0];
+        const messages = document.getElementsByClassName('message')[0];
+        messages.style.opacity = 1;
+        buttonIcon.classList.replace('fa-arrow-left', 'fa-arrow-right');
+        message.style.maxWidth = '100%';
+    }
+}

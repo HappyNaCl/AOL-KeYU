@@ -12,6 +12,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Monomaniac+One&display=swap" rel="stylesheet"> <!--nav-->
     <link href="https://fonts.googleapis.com/css2?family=Nova+Square&display=swap" rel="stylesheet"> <!--nav-->
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet"> <!--foot-->
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" /> 
 </head>
 <body>
@@ -40,9 +43,60 @@
             </li>
         </ul>
     </nav>
-
-
-
+    <section class="hero-section">
+        <div class="hero-container">
+            <div class="hero-text flex-col">
+                <h1>From passionate beginnings to streaming exellence.</h1>
+                <h2>Know our journey, and the people behind it</h2>
+            </div>
+        </div>
+    </section>
+    <section class="milestone-section flex-col">
+        <h1>Timeline</h1>
+        <div class="milestones flex-row">
+            <h1>October 2021</h1>
+            <p>KEYU Music was established in Jakarta, Indonesia</p>
+        </div>
+        <div class="milestones flex-row">
+            <h1>April 2022</h1>
+            <p>KEYU Music launches it's very own music <br>streaming web application</p>
+        </div>
+        <div class="milestones flex-row">
+            <h1>June 2022</h1>
+            <p>KEYU Music had it's very first deal with the famous <br>pop artist, Kanatashi Hiara</p>
+        </div>
+        <div class="milestones flex-row">
+            <h1>December 2022</h1>
+            <p>KEYU Music integrated AI to find more suitable songs</p>
+        </div>
+        <div class="milestones flex-row">
+            <h1>May 2023</h1>
+            <p>KEYU Music had it's first concert in <br>Jakarta Convention Center</p>
+        </div>
+        <div class="milestones flex-row">
+            <h1>January 2024</h1>
+            <p>KEYU Music integrated AI to find more suitable songs</p>
+        </div>
+    </section>
+    <section class="message-section flex-row">
+        <div class="message-div flex-row">
+            <button id="message-button" onclick="toggleMessage()"><i class="fa fa-arrow-left"></i></button>
+            <div class="message-panel flex-col">
+                <div class="message flex-col">
+                    <span>KEYU Music is a music streaming service on a mission to fuel your passion for music. We offer a universe of songs, from timeless classics to the hottest new releases, encompassing every genre imaginable. Dive deep into the works of established icons or discover the next wave of musical talent - KEYU has it all.</span>
+                    <span>At KEYU, we believe artists are the heart of music. We empower them with fair compensation models and promotional opportunities, fostering a vibrant community where creators thrive.</span>
+                    <span>But KEYU is more than just streaming. We're deeply committed to the future of music. We partner with music schools and programs, nurturing the next generation of musicians. We also champion initiatives that promote music appreciation and access to music education for all.</span>
+                    <span>Join the KEYU Music family. Sign up for a free trial today and unleash a world of endless musical possibilities. Let KEYU be the soundtrack to your life.</span>
+                    <br>
+                    <div id="signature">
+                        <h1>Makoto Yuki</h1>
+                        <span>President and CEO of KEYU</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <img src="../assets/about/yagoo.png" alt="">
+    </section>
 
     <footer id="footer">
         <div class="footer-container">
@@ -51,7 +105,7 @@
                     <h1>Overview</h1>
                     <ol>
                         <li><a href="">Song Lists</a></li>
-                        <li><a href="">About Us</a></li>
+                        <li><a href="../aboutus/about.html">About Us</a></li>
                         <li><a href="">Artists in KeYU</a></li>
                     </ol>
                 </div>
@@ -59,7 +113,7 @@
                     <h1>Get Started</h1>
                     <ol>
                         <li><a href="">Download KeYU Music</a></li>
-                        <li><a href="">Register An Account</a></li>
+                        <li><a href="../login/login.html">Register An Account</a></li>
                         <li><a href="">Upload Your Song</a></li>
                     </ol>
                 </div>
